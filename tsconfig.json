@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": "src/",
+    "sourceMap": true,
+    "target": "es6",
+    "module": "esnext",
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": true,
+    "noUnusedParameters": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "allowUnreachableCode": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "filesGlob": [],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dev"
+  ]
+}

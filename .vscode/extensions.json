@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "eg2.tslint",
+    "pflannery.vscode-versionlens",
+    "patrys.vscode-code-outline",
+    "msjsdiag.debugger-for-chrome",
+    "msjsdiag.debugger-for-edge",
+    "Gruntfuggly.todo-tree"
+  ]
+}
