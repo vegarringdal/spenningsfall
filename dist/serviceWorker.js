@@ -1,24 +1,24 @@
 (function(){
-	var _5753 = {};
-	_5753.f = {};
+	var _cd95 = {};
+	_cd95.f = {};
 	// cached modules
-	_5753.m = {};
-	_5753.r = function(id) {
-		var cached = _5753.m[id];
+	_cd95.m = {};
+	_cd95.r = function(id) {
+		var cached = _cd95.m[id];
 		// resolve if in cache
 		if (cached) {
 			return cached.m.exports;
 		}
-		var file = _5753.f[id];
+		var file = _cd95.f[id];
 		if (!file) return;
-		cached = _5753.m[id] = {};
+		cached = _cd95.m[id] = {};
 		cached.exports = {};
 		cached.m = { exports: cached.exports };
 		file.call(cached.exports, cached.m, cached.exports);
 		return cached.m.exports;
 	};
 // default/worker.js
-_5753.f[0] =
+_cd95.f[0] =
 function(){
 self.addEventListener('install', function (_event) {
 });
@@ -43,6 +43,6 @@ self.addEventListener('fetch', function (event) {
     }));
 });
 }
-_5753.r(0)
+_cd95.r(0)
 })();
 

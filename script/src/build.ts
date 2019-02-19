@@ -1,4 +1,5 @@
-import { WebIndexPlugin, HTMLPlugin, CSSPlugin, QuantumPlugin, Sparky } from 'fuse-box';
+import { WebIndexPlugin, HTMLPlugin, CSSPlugin, QuantumPlugin } from 'fuse-box';
+const { src } = require('fuse-box/sparky');
 import { createBundles, p, Ibundle } from './tasks';
 
 
@@ -75,6 +76,6 @@ const serviceWorkerBundle: Ibundle = {
 
 
 createBundles([appbundle, serviceWorkerBundle]);
-Sparky.src(p('./script/manifest.json'), { base: './' }).dest(p('dist/')).exec();
-Sparky.src(p('./script/icon192x192.png'), { base: './' }).dest(p('dist/')).exec();
-Sparky.src(p('./script/favicon.ico'), { base: './' }).dest(p('dist/')).exec();
+src(p('./script/manifest.json'), { base: './' }).dest(p('dist/')).exec();
+src(p('./script/icon192x192.png'), { base: './' }).dest(p('dist/')).exec();
+src(p('./script/favicon.ico'), { base: './' }).dest(p('dist/')).exec();

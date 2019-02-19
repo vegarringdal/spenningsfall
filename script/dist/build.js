@@ -1,5 +1,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const fuse_box_1 = require("fuse-box");
+const { src } = require('fuse-box/sparky');
 const tasks_1 = require("./tasks");
 const appbundle = {
     homeDir: './src',
@@ -68,7 +69,7 @@ const serviceWorkerBundle = {
     ]
 };
 tasks_1.createBundles([appbundle, serviceWorkerBundle]);
-fuse_box_1.Sparky.src(tasks_1.p('./script/manifest.json'), { base: './' }).dest(tasks_1.p('dist/')).exec();
-fuse_box_1.Sparky.src(tasks_1.p('./script/icon192x192.png'), { base: './' }).dest(tasks_1.p('dist/')).exec();
-fuse_box_1.Sparky.src(tasks_1.p('./script/favicon.ico'), { base: './' }).dest(tasks_1.p('dist/')).exec();
+src(tasks_1.p('./script/manifest.json'), { base: './' }).dest(tasks_1.p('dist/')).exec();
+src(tasks_1.p('./script/icon192x192.png'), { base: './' }).dest(tasks_1.p('dist/')).exec();
+src(tasks_1.p('./script/favicon.ico'), { base: './' }).dest(tasks_1.p('dist/')).exec();
 //# sourceMappingURL=build.js.map

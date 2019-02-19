@@ -1,6 +1,6 @@
 {
-    "short_name": "MframeJS",
-    "name": "MframeJS realworld app",
+    "short_name": "SpenningFall",
+    "name": "Spenningsfall kalkulator",
     "icons": [
         {
             "src": "icon192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": ".",
+    "start_url": "./",
     "background_color": "#317EFB",
     "theme_color": "#317EFB",
     "display": "standalone"
