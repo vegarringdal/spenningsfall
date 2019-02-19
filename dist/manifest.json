@@ -1,0 +1,20 @@
+{
+    "short_name": "MframeJS",
+    "name": "MframeJS realworld app",
+    "icons": [
+        {
+            "src": "icon192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon192x192.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "background_color": "#317EFB",
+    "theme_color": "#317EFB",
+    "display": "standalone"
+}
