@@ -8,8 +8,7 @@
   },
   "keywords": [
     "fuse-box",
-    "mframejs",
-    "mframejs-skeleton",
+    "lighterhtml",
     "TypeScript"
   ],
   "author": "vegar ringdal (vegar.ringdal@gmail.com)",
@@ -19,35 +18,15 @@
   },
   "homepage": "https://github.com/vegarringdal",
   "scripts": {
-    "build": "node ./script/script-runner.js build",
-    "watch": "node ./script/script-runner.js watch",
-    "test": "npm run test:typescript:tslint && npm run test:jest:coverage && codecov",
-    "test:commit": "npm run test:typescript:tslint && npm run test:jest:coverage",
-    "test:typescript:tslint": "node ./script/ts_tslint.js",
-    "test:jest": "./node_modules/.bin/jest --config=jest.config.json",
-    "test:jest:watch": "./node_modules/.bin/jest --watch --config=jest.config.json",
-    "test:jest:coverage": "./node_modules/.bin/jest --coverage --config=jest.config.json"
+    "start": "node fuse"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.6",
-    "@types/jsdom": "^12.2.2",
-    "@types/puppeteer": "^1.12.1",
+    "lit-element": "^2.2.0",
     "fuse-box": "^3.7.1",
-    "fuse-box-typechecker": "2.11.0",
-    "jest": "^24.1.0",
-    "jest-puppeteer": "^4.0.0",
-    "jsdom": "^13.2.0",
-    "mframejs": "^0.2.4",
-    "mframejs-plugin-router": "0.0.2",
-    "puppeteer": "^1.12.2",
-    "source-map": "^0.7.3",
-    "ts-jest": "^24.0.0",
-    "tslib": "^1.9.3",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3",
-    "uglify-js": "^3.4.9"
-  },
-  "dependencies": {
-    "terser": "^3.16.1"
+    "terser": "^4.1.2",
+    "ts-node": "^8.3.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3",
+    "uglify-js": "^3.6.0"
   }
 }
