@@ -1,4 +1,4 @@
-const { FuseBox, Sparky, WebIndexPlugin, SVGPlugin, CSSPlugin, QuantumPlugin } = require("fuse-box");
+const { FuseBox, Sparky, WebIndexPlugin, SVGPlugin, CSSPlugin, QuantumPlugin, PostCSSPlugin } = require("fuse-box");
 const { src, task, watch, context, fuse } = require("fuse-box/sparky");
 
 
@@ -7,20 +7,37 @@ context(class {
         return FuseBox.init({
             homeDir: "src",
             output: "dist/$name.js",
-            target : "browser@es6",
+            basePath: './',
+            target: "browser@es5",
             hash: this.isProduction,
-            useTypescriptCompiler : true,
+            sourceMaps: this.isProduction ? false : true,
+            useTypescriptCompiler: true,
             plugins: [
-                CSSPlugin(),
+                [PostCSSPlugin([
+                    require('tailwindcss'),
+                    require('autoprefixer'),
+                    this.isProduction ? require('@fullhuman/postcss-purgecss')({
+                        // Specify the paths to all of the template files in your project 
+                        content: [
+                            './src/**/*.ts'
+                            // etc.
+                        ],
+                        // Include any special characters you're using in this regular expression
+                        defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+                    }) : require('autoprefixer')
+                ]),
+                CSSPlugin()],
                 SVGPlugin(),
                 WebIndexPlugin({
-                    template : "src/index.html"
+                    template: "src/index.html",
+                    path: './'
+                    
                 }),
                 this.isProduction && QuantumPlugin({
                     bakeApiIntoBundle: "app",
                     uglify: true,
-                    treeshake: false, // breaks lit-element
-                    css : true
+                    treeshake: false,
+                    css: false //<- keep false since we allready use purge
                 })
             ]
         })
@@ -36,7 +53,11 @@ context(class {
     }
 });
 
-task("clean", () => src("dist").clean("dist").exec() )
+
+
+task("clean", () => src("dist").clean("dist").exec())
+
+
 
 task("default", ["clean"], async context => {
     const fuse = context.getConfig();
@@ -44,6 +65,8 @@ task("default", ["clean"], async context => {
     context.createBundle(fuse);
     await fuse.run();
 });
+
+
 
 task("dist", ["clean"], async context => {
     context.isProduction = true;

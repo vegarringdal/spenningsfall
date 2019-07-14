@@ -18,14 +18,21 @@
   },
   "homepage": "https://github.com/vegarringdal",
   "scripts": {
-    "start": "node fuse"
+    "start": "node fuse",
+    "build": "node fuse dist"
   },
   "devDependencies": {
-    "lit-element": "^2.2.0",
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "autoprefixer": "^9.6.1",
     "fuse-box": "^3.7.1",
+    "lit-element": "^2.2.0",
+    "postcss": "^7.0.17",
+    "tailwindcss": "^1.0.5",
     "terser": "^4.1.2",
     "ts-node": "^8.3.0",
     "tslib": "^1.10.0",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.3",
     "uglify-js": "^3.6.0"
   }
