@@ -8,15 +8,16 @@ context(class {
             homeDir: "src",
             output: "dist/$name.js",
             basePath: './',
-            target: "browser@es5",
+            target: "browser@es6",
+            cache: false,
             hash: this.isProduction,
             sourceMaps: this.isProduction ? false : true,
             useTypescriptCompiler: true,
             plugins: [
-                [PostCSSPlugin([
+                [PostCSSPlugin(this.isProduction ? [
                     require('tailwindcss'),
                     require('autoprefixer'),
-                    this.isProduction ? require('@fullhuman/postcss-purgecss')({
+                    require('@fullhuman/postcss-purgecss')({
                         // Specify the paths to all of the template files in your project 
                         content: [
                             './src/**/*.ts'
@@ -24,7 +25,10 @@ context(class {
                         ],
                         // Include any special characters you're using in this regular expression
                         defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-                    }) : require('autoprefixer')
+                    }) 
+                ]: [
+                    require('tailwindcss'),
+                    require('autoprefixer')
                 ]),
                 CSSPlugin()],
                 SVGPlugin(),
