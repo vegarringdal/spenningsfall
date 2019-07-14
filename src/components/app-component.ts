@@ -76,7 +76,7 @@ export class AppComponent extends LitElement {
     public render() {
 
         return html`
-                <div class="container mx-auto m-5 p-5">
+                <div class="container mx-auto m-5 p-5 md:flex md:flex-col md:w-2/3 lg:flex lg:flex-col lg:w-1/3">
 
                 <h1 class="mr-2 w-full text-3xl text-center text-gray-600">Voltage drop Calculator</h1>
 
