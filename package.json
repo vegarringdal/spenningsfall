@@ -27,7 +27,7 @@
     "autoprefixer": "^9.6.1",
     "fuse-box": "^3.7.1",
     "lit-element": "^2.2.0",
-    "postcss": "^7.0.17",
+    "postcss": "^7.0.36",
     "tailwindcss": "^1.0.5",
     "terser": "^4.1.2",
     "ts-node": "^8.3.0",
